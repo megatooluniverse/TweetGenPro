@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>TweetGen Pro | The Ultimate Realistic X & Twitter Mockup Generator</title>
+    <meta name="description" content="Create pixel-perfect, realistic X (Twitter) mockups in seconds. Best free tool for memes, presentations, UI design, and pranks. No watermarks, mobile-friendly!">
+    <meta name="keywords" content="fake tweet generator, mock tweet, twitter mockup, x mockup generator, prank tweet maker, realistic tweet creator, tweet generator free, no watermark tweet maker">
+    <meta name="author" content="TweetGen Pro">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="TweetGen Pro | High-Quality Mockup Tool">
+    <meta property="og:description" content="Design indistinguishable Twitter mockups instantly. 100% free, fully customizable, and mobile-ready.">
+    <meta property="og:image" content="https://abs.twimg.com/responsive-web/client-web/icon-ios.77d25eba.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/">
+    <meta property="twitter:title" content="TweetGen Pro | Make Fake Tweets">
+    <meta property="twitter:description" content="Generate realistic X mockups with our professional tool in seconds.">
+    
+    <link rel="icon" href="https://abs.twimg.com/favicons/twitter.3.ico" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>(function(s){s.dataset.zone='10635559',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <script src="https://5gvci.com/act/files/tag.min.js?z=10635566" data-cfasync="false" async></script>
+    <script>(function(s){s.dataset.zone='10635578',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+    <style>
+        /* --- CORE THEME --- */
+        :root {
+            --bg-site: #f7f9f9;
+            --bg-panel: #ffffff;
+            --text-main: #0f1419;
+            --text-sub: #536471;
+            --border: #eff3f4;
+            --accent: #1d9bf0;
+            --btn-bg: #0f1419;
+            --btn-text: #ffffff;
+            --shadow: 0 8px 28px rgba(0,0,0,0.08);
+            --modal-bg: rgba(0,0,0,0.7);
+        }
+
+        [data-theme="dark"] {
+            --bg-site: #15202b;
+            --bg-panel: #000000;
+            --text-main: #e7e9ea;
+            --text-sub: #71767b;
+            --border: #2f3336;
+            --btn-bg: #ffffff;
+            --btn-text: #0f1419;
+            --shadow: 0 8px 28px rgba(255,255,255,0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+        body { background: var(--bg-site); color: var(--text-main); transition: background-color 0.3s, color 0.3s; display: flex; flex-direction: column; min-height: 100vh; }
+
+        /* --- HEADER --- */
+        header { background: var(--bg-panel); padding: 15px 5%; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; transition: background-color 0.3s; }
+        .logo { font-size: 22px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+        .theme-btn { background: var(--border); border: none; font-size: 20px; padding: 8px 12px; border-radius: 20px; cursor: pointer; color: var(--text-main); transition: 0.2s; }
+        .theme-btn:hover { background: var(--text-sub); color: var(--bg-panel); }
+
+        /* --- LAYOUT --- */
+        .container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 30px auto; gap: 30px; padding: 0 20px; flex: 1; width: 100%; }
+        .controls, .preview-wrapper { flex: 1; min-width: 320px; }
+
+        /* --- CONTROLS --- */
+        .controls { background: var(--bg-panel); padding: 25px; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow); }
+        .controls h2 { margin-bottom: 20px; font-size: 20px; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+        .control-group { margin-bottom: 18px; }
+        label { display: block; font-size: 14px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
+        input[type="text"], input[type="datetime-local"], textarea { width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-site); color: var(--text-main); font-size: 15px; transition: 0.2s; }
+        input:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(29, 155, 240, 0.2); }
+        textarea { resize: vertical; min-height: 100px; }
+        input[type="file"] { width: 100%; padding: 10px; background: var(--bg-site); border: 1px dashed var(--text-sub); border-radius: 8px; color: var(--text-main); cursor: pointer; }
+        .row { display: flex; gap: 15px; flex-wrap: wrap; }
+        .row > div { flex: 1; min-width: 140px; }
+        
+        .checkbox-group { display: flex; align-items: center; gap: 10px; padding: 10px 0; }
+        .checkbox-group input { width: 18px; height: 18px; cursor: pointer; }
+        .checkbox-group label { margin: 0; cursor: pointer; }
+        
+        .btn { width: 100%; padding: 16px; border: none; border-radius: 30px; font-size: 16px; font-weight: 700; cursor: pointer; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .btn-primary { background: var(--accent); color: white; margin-top: 15px; box-shadow: 0 4px 12px rgba(29, 155, 240, 0.3); }
+        .btn-primary:hover { background: #1a8cd8; transform: translateY(-2px); }
+
+        /* --- REALISTIC PREVIEW --- */
+        .preview-wrapper { display: flex; flex-direction: column; align-items: center; position: sticky; top: 90px; height: fit-content; }
+        .preview-title { width: 100%; max-width: 600px; text-align: left; margin-bottom: 10px; font-weight: bold; color: var(--text-sub); }
+        
+        .tweet-card { background: var(--bg-panel); width: 100%; max-width: 600px; padding: 16px; border-radius: 16px; border: 1px solid var(--border); position: relative; overflow: hidden; }
+        
+        .t-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+        .t-user { display: flex; gap: 12px; align-items: center; }
+        .t-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+        .t-name-row { display: flex; align-items: center; gap: 4px; }
+        .t-name { font-weight: 700; font-size: 17px; }
+        .t-verified { width: 18px; height: 18px; fill: var(--accent); display: block; }
+        .t-handle { color: var(--text-sub); font-size: 15px; }
+        .t-logo { width: 24px; fill: var(--text-main); }
+
+        .t-body { font-size: 20px; line-height: 1.4; word-wrap: break-word; white-space: pre-wrap; margin-bottom: 16px; color: var(--text-main); }
+        .t-media { width: 100%; border-radius: 16px; margin-bottom: 16px; border: 1px solid var(--border); display: none; object-fit: cover; max-height: 400px; }
+        
+        .t-date { color: var(--text-sub); font-size: 15px; margin-bottom: 16px; display: flex; gap: 5px; flex-wrap: wrap; }
+        .t-divider { height: 1px; background: var(--border); margin: 0; }
+        
+        .t-stats { display: flex; padding: 16px 0; gap: 20px; font-size: 15px; color: var(--text-sub); border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+        .t-stats strong { color: var(--text-main); font-weight: 700; }
+
+        /* --- LEGAL WATERMARK --- */
+        .legal-watermark {
+            position: absolute;
+            bottom: 12px;
+            right: 16px;
+            font-size: 11px;
+            color: var(--text-sub);
+            opacity: 0.5;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 10;
+        }
+
+        /* --- MODALS --- */
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--modal-bg); z-index: 1000; display: none; justify-content: center; align-items: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease; }
+        .modal.active { display: flex; opacity: 1; }
+        .modal-content { background: var(--bg-panel); padding: 30px; border-radius: 16px; max-width: 450px; width: 90%; text-align: center; border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.2); transform: translateY(-20px); transition: transform 0.3s ease; }
+        .modal.active .modal-content { transform: translateY(0); }
+        .modal-title { font-size: 22px; font-weight: 800; margin-bottom: 15px; color: #f4212e; display: flex; justify-content: center; align-items: center; gap: 10px; }
+        .modal-text { font-size: 15px; color: var(--text-sub); margin-bottom: 25px; line-height: 1.6; }
+        .modal-actions { display: flex; gap: 15px; }
+        .btn-cancel { background: var(--bg-site); color: var(--text-main); flex: 1; border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-weight: bold; cursor: pointer; }
+        .btn-confirm { background: #f4212e; color: white; flex: 1; border: none; border-radius: 8px; padding: 12px; font-weight: bold; cursor: pointer; }
+        .btn-cancel:hover { background: var(--border); }
+        .btn-confirm:hover { background: #dc1e29; }
+
+        /* --- FOOTER --- */
+        footer { background: var(--bg-panel); border-top: 1px solid var(--border); padding: 25px 20px; text-align: center; font-size: 14px; color: var(--text-sub); margin-top: auto; }
+        .footer-links { margin-bottom: 15px; }
+        .footer-links a { color: var(--text-sub); text-decoration: none; margin: 0 10px; font-weight: 600; display: inline-block; padding: 5px 0; }
+        .footer-links a:hover { color: var(--accent); }
+
+        @media(max-width: 768px) {
+            .container { flex-direction: column; padding: 0 15px; margin: 15px auto; }
+            .preview-wrapper { position: static; }
+            .t-stats { gap: 10px; justify-content: space-between; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <svg viewBox="0 0 24 24" style="width:28px; fill:var(--accent)"><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></svg>
+            TweetGen Pro
+        </div>
+        <button class="theme-btn" id="theme-toggle" onclick="toggleTheme()" title="Toggle Dark/Light Mode">🌙</button>
+    </header>
+
+    <div class="container">
+        <div class="controls">
+            <h2>Edit Tweet Details</h2>
+            
+            <div class="row">
+                <div class="control-group">
+                    <label>Profile Image</label>
+                    <input type="file" id="inp-file" accept="image/*">
+                </div>
+                <div class="control-group">
+                    <label>Tweet Image (Optional)</label>
+                    <input type="file" id="inp-media" accept="image/*">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="control-group">
+                    <label>Name</label>
+                    <input type="text" id="inp-name" value="Elon Musk" placeholder="e.g. Elon Musk">
+                </div>
+                <div class="control-group">
+                    <label>Username</label>
+                    <input type="text" id="inp-handle" value="elonmusk" placeholder="e.g. elonmusk">
+                </div>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="inp-verified" checked>
+                <label for="inp-verified">Show Verified Badge (Blue Tick)</label>
+            </div>
+            
+            <div class="control-group">
+                <label>Tweet Text</label>
+                <textarea id="inp-text" placeholder="What is happening?!">Just setting up my twttr... wait, it's X now. 🚀</textarea>
+            </div>
+            
+            <div class="row">
+                <div class="control-group">
+                    <label>Date & Time</label>
+                    <input type="datetime-local" id="inp-date">
+                </div>
+                <div class="control-group">
+                    <label>Views</label>
+                    <input type="text" id="inp-views" value="10M" placeholder="e.g. 10M">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="control-group"><label>Reposts</label><input type="text" id="inp-rts" value="12.4K"></div>
+                <div class="control-group"><label>Quotes</label><input type="text" id="inp-quotes" value="4.2K"></div>
+                <div class="control-group"><label>Likes</label><input type="text" id="inp-likes" value="105K"></div>
+            </div>
+            <button class="btn btn-primary" onclick="showWarning()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                Generate & Download HD
+            </button>
+        </div>
+
+        <div class="preview-wrapper">
+            <div class="preview-title">Live Preview</div>
+            <div id="preview-card" class="tweet-card">
+                <div class="t-header">
+                    <div class="t-user">
+                        <img id="prev-avatar" class="t-avatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23cfd9de'%3E%3Ccircle cx='12' cy='12' r='12'/%3E%3C/svg%3E" alt="Profile">
+                        <div>
+                            <div class="t-name-row">
+                                <span class="t-name" id="prev-name">Elon Musk</span>
+                                <svg id="prev-verified" class="t-verified" viewBox="0 0 24 24"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .495.083.965.238 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"></path></svg>
+                            </div>
+                            <div class="t-handle" id="prev-handle">@elonmusk</div>
+                        </div>
+                    </div>
+                    <svg class="t-logo" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+                </div>
+                
+                <div class="t-body" id="prev-text">Just setting up my twttr... wait, it's X now. 🚀</div>
+                <img id="prev-media" class="t-media" alt="Tweet Media">
+
+                <div class="t-date" id="prev-date">10:30 AM · Jan 1, 2026 · <strong style="color:var(--text-main)">10M</strong> Views</div>
+                <div class="t-divider"></div>
+                <div class="t-stats">
+                    <span id="prev-rts-wrap"><strong id="prev-rts">12.4K</strong> Reposts</span>
+                    <span id="prev-quotes-wrap"><strong id="prev-quotes">4.2K</strong> Quotes</span>
+                    <span id="prev-likes-wrap"><strong id="prev-likes">105K</strong> Likes</span>
+                </div>
+
+                <div class="legal-watermark">⚠️ Mockup / Parody - Not Real</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> | 
+            <a href="disclaimer.html">Disclaimer</a> | 
+            <a href="terms.html">Terms of Use</a> | 
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div>&copy; <span id="year"></span> TweetGen Pro. All rights reserved.</div>
+    </footer>
+
+    <div class="modal" id="warning-modal">
+        <div class="modal-content">
+            <h2 class="modal-title">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Important Disclaimer
+            </h2>
+            <p class="modal-text">This tool is strictly for <b>educational, parody, and design mockup purposes</b>. By clicking "I Agree", you legally confirm that you will not use this generated image to spread misinformation, fake news, or impersonate real individuals with malicious intent.</p>
+            <div class="modal-actions">
+                <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+                <button class="btn-confirm" onclick="proceedDownload()">I Agree, Download</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('year').innerText = new Date().getFullYear();
+
+        // Set initial Date & Time properly
+        const now = new Date();
+        const offset = now.getTimezoneOffset() * 60000;
+        const localISOTime = (new Date(now.getTime() - offset)).toISOString().slice(0,16);
+        document.getElementById('inp-date').value = localISOTime;
+
+        // Theme Handling
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.getAttribute('data-theme') === 'dark';
+            html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            document.getElementById('theme-toggle').innerText = isDark ? '🌙' : '☀️';
+            
+            // Save preference to local storage
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        }
+
+        // Load saved theme
+        if(localStorage.getItem('theme') === 'dark') {
+            toggleTheme();
+        }
+
+        // Event Listeners for Real-time Update
+        const inputs = ['name', 'handle', 'text', 'rts', 'quotes', 'likes', 'date', 'views'];
+        inputs.forEach(id => {
+            document.getElementById(`inp-${id}`).addEventListener('input', updatePreview);
+        });
+        document.getElementById('inp-verified').addEventListener('change', updatePreview);
+
+        // Profile Pic Upload Logic
+        document.getElementById('inp-file').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    document.getElementById('prev-avatar').src = event.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Tweet Media Upload Logic
+        document.getElementById('inp-media').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const mediaPreview = document.getElementById('prev-media');
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    mediaPreview.src = event.target.result;
+                    mediaPreview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            } else {
+                mediaPreview.style.display = 'none';
+                mediaPreview.src = '';
+            }
+        });
+
+        // Function to update the Preview Card
+        function updatePreview() {
+            document.getElementById('prev-name').innerText = document.getElementById('inp-name').value || 'Name';
+            
+            // Format Handle
+            let handleValue = document.getElementById('inp-handle').value.trim();
+            if(handleValue && !handleValue.startsWith('@')) handleValue = '@' + handleValue;
+            document.getElementById('prev-handle').innerText = handleValue || '@username';
+            
+            document.getElementById('prev-text').innerText = document.getElementById('inp-text').value;
+            document.getElementById('prev-verified').style.display = document.getElementById('inp-verified').checked ? 'block' : 'none';
+            
+            document.getElementById('prev-rts').innerText = document.getElementById('inp-rts').value || '0';
+            document.getElementById('prev-quotes').innerText = document.getElementById('inp-quotes').value || '0';
+            document.getElementById('prev-likes').innerText = document.getElementById('inp-likes').value || '0';
+            const views = document.getElementById('inp-views').value || '0';
+
+            const d = new Date(document.getElementById('inp-date').value);
+            if(!isNaN(d.getTime())) {
+                const time = d.toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit', hour12:true});
+                const date = d.toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+                document.getElementById('prev-date').innerHTML = `${time} &middot; ${date} &middot; <strong style="color:var(--text-main)">${views}</strong> Views`;
+            }
+        }
+
+        // Modal Logic
+        function showWarning() { 
+            const modal = document.getElementById('warning-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+        
+        function closeModal() { 
+            const modal = document.getElementById('warning-modal');
+            modal.classList.remove('active');
+            setTimeout(() => modal.style.display = 'none', 300);
+        }
+        
+        function proceedDownload() {
+            closeModal();
+            // Add a small delay so modal closes before screenshot
+            setTimeout(drawAndDownload, 350); 
+        }
+
+        // High Definition Rendering & Downloading
+        function drawAndDownload() {
+            const previewCard = document.getElementById('preview-card');
+            
+            // Backup styles for clean export
+            const originalBorder = previewCard.style.border;
+            const originalShadow = previewCard.style.boxShadow;
+            
+            previewCard.style.border = 'none';
+            previewCard.style.boxShadow = 'none';
+
+            // Change button text to show progress
+            const btn = document.querySelector('.btn-primary');
+            const originalBtnText = btn.innerHTML;
+            btn.innerHTML = 'Generating... Please wait';
+            btn.style.pointerEvents = 'none';
+
+            html2canvas(previewCard, {
+                scale: 3, // 3x Resolution for HD
+                useCORS: true, // Allows external images if any
+                backgroundColor: getComputedStyle(previewCard).backgroundColor,
+                logging: false
+            }).then(canvas => {
+                // Restore styles
+                previewCard.style.border = originalBorder;
+                previewCard.style.boxShadow = originalShadow;
+                btn.innerHTML = originalBtnText;
+                btn.style.pointerEvents = 'auto';
+                
+                // Create download link
+                const link = document.createElement('a');
+                link.download = `TweetGen-Mockup-${Date.now()}.png`;
+                link.href = canvas.toDataURL('image/png', 1.0);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }).catch(err => {
+                alert("An error occurred while generating the image. Please try again.");
+                console.error(err);
+                btn.innerHTML = originalBtnText;
+                btn.style.pointerEvents = 'auto';
+            });
+        }
+
+        // Init
+        updatePreview();
+    </script>
+</body>
+</html>
